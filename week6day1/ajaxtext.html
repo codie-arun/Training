@@ -1,0 +1,28 @@
+<html>
+	<body>
+		<script>
+				var ajaxObj=new XMLHttpRequest();
+				function makeAjaxCall(url){
+					alert("hello");
+					var target=document.getElementById("targetDiv");
+					ajaxObj.open("GET",url);
+						ajaxObj.onreadystatechange=function(){
+							if(ajaxObj.readyState==4 && ajaxObj.status==200){
+								var response=ajaxObj.responseText;
+								target.innerHTML=response;
+							}
+						}
+					ajaxObj.send(null);//where u make the actual request...
+				}
+		
+		</script>
+	
+	<form>
+		<input type="button" onClick="makeAjaxCall('http://localhost:80/arun.txt')" value="MakeAjaxCall"></input>
+	</form>
+	
+	<div id="targetDiv">
+		This is the place
+	</div>
+	</body>
+</html>

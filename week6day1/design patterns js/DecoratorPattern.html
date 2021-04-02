@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> </title>
+</head>
+<body>
+<script>
+	
+	function icecream()
+	{
+
+	}
+
+	function cone(){
+		this.cost=function()
+		{
+			return 10;
+		}
+	}
+
+	cone.prototype=new icecream();
+
+	function cream(item){
+		this.cost=function(){
+			return 5+item.cost();
+		}
+	}
+
+	function nuts(item){
+		this.cost=function(){
+			return 5+item.cost();
+		}
+	}
+	function fruits(item){
+		this.cost=function(){
+			return 5+item.cost();
+		}
+	}
+
+	cream.prototype=new icecream();
+	nuts.prototype=new icecream();
+	fruits.prototype=new icecream();
+
+	var i=new cone();
+
+
+	console.log("The cost of icecream is..:"+i.cost());
+	i=new nuts(i);
+	console.log("The cost of icecream with nuts and cone is..:"+i.cost());
+	i=new cream(i);
+	i=new cream(i);
+	console.log('The total cost of icecream is...'+i.cost());
+
+</script>
+
+
+</body>
+</html>

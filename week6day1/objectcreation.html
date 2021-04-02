@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		var person = new Object();
+		person.name = "arun";
+		person.getName = function(){
+			return this.name;
+		}
+
+		console.log(person);
+
+		var person2={                   
+			name:'arun2',
+			getName:function(){ 
+				return this.name;
+			}
+		}
+		console.log(person2);
+
+		var person3=function(name,age){
+			var personObj=new Object();
+			personObj.name=name;personObj.age=age;
+			personObj.getName=function(){return this.name+"and the age is..:"+this.age;};
+			return personObj;
+		}
+
+		var p3=new person3("arun3",10);
+		console.log(p3);
+
+		var person4=function(name,age){
+			this.name=name;this.age=age;
+			this.getName=function(){return this.name+" and the age is..:"+this.age;};
+			return this;
+			}
+
+		var p4=new person3("arun4",10);
+		console.log(p4);
+
+		function Person5(name){
+		this.name=name;
+		this.getName=function(){
+		return this.name;
+		}
+		this.display=display;
+		}
+
+		function display(){
+		console.log("hello")
+		}
+
+		var p5=new Person5("arun5");
+		console.log(p5);
+
+
+
+
+		function Parent(){
+			this.getName=function(){
+			return this.name;
+			}
+		}
+
+		function Child(name){
+			this.name=name;
+		}
+
+		Child.prototype=new Parent();	
+		Child.prototype.constructor=Child;
+
+		var c=new Child("child arun");
+		console.log(c)
+		console.log("child name...:"+c.getName());
+
+	</script>
+
+</body>
+</html>

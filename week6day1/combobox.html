@@ -1,0 +1,67 @@
+<html>
+	<body>
+		<script>
+				var ajaxObj=new XMLHttpRequest();
+				function makeAjaxCall(url){
+					//alert("hello");
+					var target=document.getElementById("targetDiv");
+					ajaxObj.open("GET",url);
+						ajaxObj.onreadystatechange=function(){
+							if(ajaxObj.readyState==4 && ajaxObj.status==200){
+								var response=ajaxObj.responseXML;
+								//alert(response.xml);
+								//target.innerHTML=response.documentElement.nodeName;
+								var newelement=response.createElement("NEWELEMENT");
+		var value=response.createTextNode("IAM THE VALUE...");
+		//var att=response.createAttribute("ID");
+		//var attvalue=response.createTextNode("BBBBBB");
+		
+		//att.appendChild(attvalue);
+		//newelement.attributes.setNamedItem(att);
+		newelement.appendChild(value);
+		rootelement.appendChild(newelement);
+		
+		//var clone=newelement.cloneNode(true);
+		//rootelement.firstChild.appendChild(clone);
+		//rootelement.firstChild.insertBefore(newelement,rootelement.firstChild.lastChild);
+		
+		console.log((new XMLSerializer()).serializeToString(response));
+						}
+					ajaxObj.send(null);//where u make the actual request...
+				}
+
+
+		function push(countrylist)
+   {
+   var target=document.getElementById("target");
+   for(j=0;j<countrylist.childNodes.length;j++){
+	target.options[j]=new Option(countrylist.childNodes[j].
+	firstChild.nodeValue);
+	}
+   }
+
+
+
+
+
+
+
+
+
+
+		
+		</script>
+	
+
+        <form>
+        <select size="1" id="countryList" onchange="setCity('city.xml')">
+        	<option value="india">India</option>
+        	<option value="iraq">IRAQ</option>
+        </select>
+         <select size="1" id="target">
+        	<option value="india">cities</option>
+        	
+        </select>
+        </form>
+	</body>
+</html>

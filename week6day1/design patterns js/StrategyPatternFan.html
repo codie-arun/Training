@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+
+function Fan(){	
+	this.setState=function(state){
+		this.state=state;
+	}
+
+	this.pull=function(){
+		this.state.execute(this);
+	}
+}
+
+
+function SwitchOffState(){
+	this.execute=function(fan){
+		fan.setState(new SwitchOnState());
+	    console.log("switch on state.....");
+	}
+}
+
+function SwitchOnState(){
+	this.execute=function(fan){
+		fan.setState(new LowSpeedState());
+	    console.log("Low Speed state.....");
+	}
+}
+
+function LowSpeedState(){
+	this.execute=function(fan){
+		fan.setState(new HighSpeedState());
+	    console.log("High Speed state.....");
+	}
+}
+function HighSpeedState(){
+	this.execute=function(fan){
+		fan.setState(new SwitchOffState());
+	console.log("switch off state.....");
+	}
+}
+var khaitan=new Fan();
+khaitan.setState(new SwitchOffState());
+//for(var i=0;i<10;i++){
+//confirm("click yes to pull chain...");
+setInterval("khaitan.pull();",500);
+
+</script>
+
+</body>
+</html>
