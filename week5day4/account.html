@@ -1,0 +1,37 @@
+<html>
+	<body>
+		<script>
+		
+		function account(){
+			
+			function setValues(name,accNo,type,balance){
+				this.name=name;
+				this.accNo=accNo;
+				this.type=type;
+				this.balance=balance;
+			}
+			
+			function deposit(amount){
+				this.balance = this.balance + amount;
+				document.write("Your current balance is "+this.balance)
+			}
+			
+			function withdraw(amount){
+				document.write("Balance "+this.balance)
+				this.balance = this.balance + amount;
+			}
+			function display(){
+				document.write("Name : "+this.name+" balance : "+this.balance);
+			}
+			
+		}
+		
+		account1 = new account();
+		account1.setValues("Arun",1900001,"salary",5000);
+		account1.deposit(55000);
+		account1.withdraw(10000);
+		account1.display();
+		
+		</script>
+	</body>
+</html>

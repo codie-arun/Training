@@ -1,0 +1,25 @@
+<html>
+<head>
+
+
+</head>
+<body>
+	<script>
+	function cartesianToPolar(x, y){
+	    distance = Math.sqrt(x*x + y*y)
+	    radians = Math.atan2(y,x) //This takes y first
+	    polarCoor = { distance:distance, radians:radians }
+	    document.write(" distance : "+polarCoor.distance+" "+" angle : "+polarCoor.radians)
+	}
+	
+	function polarToCartesian(r, angle){
+		
+		x = r*Math.cos(angle);
+		y = r*Math.sin(angle);
+		document.write(" x value : "+x+" "+" y value : "+y);
+	}
+	cartesianToPolar(5,5);
+	polarToCartesian(7.0710678118654755,0.7853981633974483);
+	</script>
+</body>
+</html>
