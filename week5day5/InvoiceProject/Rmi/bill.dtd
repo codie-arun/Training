@@ -1,0 +1,13 @@
+<!ELEMENT bill (customername,billno,billdate,items+,total)>
+<!ELEMENT items (item+)>
+<!ELEMENT item (slno,itemname,unit,price,qty,amount)>
+<!ELEMENT customername (#PCDATA)>
+<!ELEMENT billno (#PCDATA)>
+<!ELEMENT billdate (#PCDATA)>
+<!ELEMENT slno (#PCDATA)>
+<!ELEMENT itemname (#PCDATA)>
+<!ELEMENT unit (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT qty (#PCDATA)>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT total (#PCDATA)>
