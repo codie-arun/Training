@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="inheritence.ShoeFactory" table="shoetable">
+        <id name="sid" type="int" unsaved-value="0">
+            <generator class="hilo"/>
+        </id>
+        <property name="name" />
+        
+   </class>
+       
+  	<class name="inheritence.BataShoeFactory" table="batatable">
+	  	<id name="sid" type="int" unsaved-value="0">
+            <generator class="hilo"/>
+        </id>
+       <property name="name" />
+       <property name="bataname"/>
+    </class>
+      
+    <class name="inheritence.LakhaniShoeFactory" table="lakhanitable">
+      	<id name="sid" type="int" unsaved-value="0">
+            <generator class="hilo"/>
+        </id> 
+        <property name="name" />       
+      	<property name="lakhaniname" type="string"/>
+    </class>
+	        
+	
+
+</hibernate-mapping>
